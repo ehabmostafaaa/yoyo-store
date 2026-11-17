@@ -756,10 +756,28 @@
       }
     }
 
+    .product-card__meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+
     .product-card__cat-label {
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--color-accent-dark);
+    }
+
+    .product-card__code-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      padding: 0.08rem 0.45rem;
+      border-radius: var(--radius-pill);
+      direction: ltr;
     }
 
     .product-card__title {
@@ -824,7 +842,7 @@
     }
 
     /* ==========================================================================
-       9. صفحة تفاصيل المنتج ومعرض الصور (Product Detail View)
+       9. صفحة تفاصيل المنتج ومعرض الصور والمواصفات الاحترافية (Product Detail View)
        ========================================================================== */
     .product-detail-page {
       padding-block: 1.5rem 4.5rem;
@@ -868,7 +886,7 @@
 
     @media (min-width: 860px) {
       .detail-layout {
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: 1.02fr 0.98fr;
         padding: 2.25rem;
         gap: 2.75rem;
         align-items: start;
@@ -944,7 +962,7 @@
     .detail-info {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.05rem;
     }
 
     .detail-badges {
@@ -972,6 +990,26 @@
       border-radius: var(--radius-pill);
     }
 
+    .detail-code-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      padding: 0.24rem 0.75rem;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .detail-code-tag strong {
+      color: var(--color-primary);
+      direction: ltr;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: 0.03em;
+    }
+
     .detail-title {
       font-size: clamp(1.45rem, 3vw, 2.05rem);
       font-weight: 700;
@@ -980,17 +1018,169 @@
     }
 
     .detail-price {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-primary);
     }
 
     .detail-desc {
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: var(--color-text-muted);
       line-height: 1.75;
-      padding-block: 0.5rem;
+      padding-block: 0.65rem;
       border-block: 1px solid var(--color-border);
+    }
+
+    /* بطاقة المواصفات الاحترافية (كود القطعة + الخامة + الألوان + المقاسات) */
+    .specs-panel {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .spec-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .spec-card__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .spec-card__label svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-accent-dark);
+      flex-shrink: 0;
+    }
+
+    .spec-card__value {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .spec-card__value--code {
+      direction: ltr;
+      text-align: right;
+      color: var(--color-primary);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: 0.04em;
+    }
+
+    .option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .option-group__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .option-group__selected {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* دوائر اختيار الألوان */
+    .color-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .color-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .color-chip[aria-pressed="true"] {
+      border-color: var(--color-primary);
+      background-color: var(--color-rose-tint);
+      color: var(--color-primary);
+    }
+
+    @media (hover: hover) {
+      .color-chip:hover {
+        border-color: var(--color-primary);
+      }
+    }
+
+    .color-chip__dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid rgba(74, 37, 54, 0.22);
+      flex-shrink: 0;
+    }
+
+    /* أزرار اختيار المقاسات */
+    .size-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .size-chip {
+      min-width: 46px;
+      padding: 0.42rem 0.85rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-text);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .size-chip[aria-pressed="true"] {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #FFFFFF;
+    }
+
+    @media (hover: hover) {
+      .size-chip:not([aria-pressed="true"]):hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
     }
 
     .order-box {
@@ -1001,13 +1191,21 @@
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
-      margin-block-start: 0.5rem;
+      margin-block-start: 0.25rem;
     }
 
-    .order-box__note {
-      font-size: 0.86rem;
+    .order-box__summary {
+      font-size: 0.84rem;
       color: var(--color-text);
-      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.85rem;
+      line-height: 1.6;
+    }
+
+    .order-box__summary strong {
+      color: var(--color-primary);
     }
 
     .order-box__btn {
@@ -1220,17 +1418,12 @@
   <!-- تعريف أيقونات SVG وأيقونة الفستان الرقيقة المعبرة عن محل بيع ملابس البنات والأطفال -->
   <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
     <defs>
-      <!-- أيقونة فستان بناتي وأطفال شيك وخفيف داخل دائرة ناعمة -->
       <symbol id="girls-kids-dress-icon" viewBox="0 0 64 64">
         <circle cx="32" cy="32" r="29" fill="#FCEEF3" stroke="#F2DCE4" stroke-width="1.2" />
-        <!-- حمالات الفستان -->
         <path d="M26 14 V20 M38 14 V20" stroke="#C9A25B" stroke-width="1.9" stroke-linecap="round" />
-        <!-- صدر الفستان وتنورته المنفوشة برقة -->
         <path d="M23 20 Q32 23 41 20 L38.5 29.5 L48.5 47 Q32 52 15.5 47 L25.5 29.5 Z" fill="#FFFFFF" stroke="#BA2D65" stroke-width="2" stroke-linejoin="round" />
-        <!-- حزام الخصر الذهبي وفيونكة صغيرة -->
         <path d="M25.5 29.5 Q32 31.5 38.5 29.5" fill="none" stroke="#C9A25B" stroke-width="2.2" stroke-linecap="round" />
         <circle cx="32" cy="30.2" r="2" fill="#BA2D65" />
-        <!-- كسرات ناعمة في الفستان -->
         <path d="M29 33 L24 47.5 M35 33 L40 47.5" stroke="#F3B6C8" stroke-width="1.3" stroke-linecap="round" />
       </symbol>
 
@@ -1244,6 +1437,14 @@
 
       <symbol id="icon-search" viewBox="0 0 24 24">
         <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z" />
+      </symbol>
+
+      <symbol id="icon-tag" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01" />
+      </symbol>
+
+      <symbol id="icon-fabric" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
       </symbol>
     </defs>
   </svg>
@@ -1296,51 +1497,40 @@
           </div>
         </div>
 
-        <!-- اللوجو بفستان بناتي وأطفال شيك وخفيف (Yoyo STORE فقط) -->
+        <!-- اللوجو بفستان بناتي وأطفال شيك وخفيف -->
         <div class="hero__visual">
           <svg class="hero-emblem" viewBox="0 0 380 255" role="img" aria-label="Yoyo Store">
-            <!-- قوس علوي ناعم -->
             <path d="M84 115 A106 86 0 0 1 296 115" fill="none" stroke="#F2DCE4" stroke-width="1.4" />
 
-            <!-- أيقونة فستان بناتي رقيق مع شماعة ذهبية في المنتصف العلوي -->
             <g transform="translate(154, 16)">
-              <!-- شماعة ذهبية رقيقة -->
               <path d="M36 9 C36 5.5 41 5.5 41 9 C41 11.2 36 12.5 36 15" fill="none" stroke="#C9A25B" stroke-width="1.8" stroke-linecap="round" />
               <path d="M36 15 L20 22.5 L52 22.5 Z" fill="none" stroke="#C9A25B" stroke-width="1.7" stroke-linejoin="round" />
-              <!-- الفستان البناتي المنفوش برقة -->
               <path d="M26 22.5 L28.5 34.5 L15 58 Q36 64 57 58 L43.5 34.5 L46 22.5 Z" fill="#FCEEF3" stroke="#BA2D65" stroke-width="1.9" stroke-linejoin="round" />
-              <!-- حزام الخصر الذهبي -->
               <path d="M28.5 34.5 Q36 37 43.5 34.5" fill="none" stroke="#C9A25B" stroke-width="2.1" stroke-linecap="round" />
-              <!-- كسرات الفستان الرقيقة -->
               <path d="M32.5 38 L26.5 59 M39.5 38 L45.5 59" fill="none" stroke="#E598B5" stroke-width="1.2" stroke-linecap="round" />
-              <!-- نجوم بريق خفيفة بجانب الفستان -->
               <path d="M10 34 L11.2 36.8 L14 38 L11.2 39.2 L10 42 L8.8 39.2 L6 38 L8.8 36.8 Z" fill="#C9A25B" />
               <path d="M62 34 L63.2 36.8 L66 38 L63.2 39.2 L62 42 L60.8 39.2 L58 38 L60.8 36.8 Z" fill="#C9A25B" />
             </g>
 
-            <!-- كلمة Yoyo بخط سيريف أنثوي رشيق وواضح -->
             <text x="190" y="148" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="80" font-weight="700" letter-spacing="1.5" fill="#BA2D65">
               Yoyo
             </text>
 
-            <!-- خط فاصل رقيق يتوسطه رمز ألماسة ذهبية صغيرة -->
             <line x1="106" y1="168" x2="179" y2="168" stroke="#E8C9D5" stroke-width="1.2" />
             <polygon points="190,163.5 194.5,168 190,172.5 185.5,168" fill="#C9A25B" />
             <line x1="201" y1="168" x2="274" y2="168" stroke="#E8C9D5" stroke-width="1.2" />
 
-            <!-- كلمة STORE واضحة ومريحة باللون الذهبي الدافئ -->
             <text x="190" y="198" text-anchor="middle" font-family="'IBM Plex Sans Arabic', sans-serif" font-size="20" font-weight="700" letter-spacing="11" fill="#A67F38">
               STORE
             </text>
 
-            <!-- قوس سفلي خفيف يوازن التصميم -->
             <path d="M128 216 Q190 230 252 216" fill="none" stroke="#F2DCE4" stroke-width="1.4" stroke-linecap="round" />
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- بطاقات الأقسام الخمسة (دريسات - بيجامات - عبايات - هوديز - أطفال) -->
+    <!-- بطاقات الأقسام الخمسة -->
     <section class="category-tiles" aria-label="تصفحي حسب القسم">
       <div class="container category-tiles__grid">
         <button type="button" class="cat-tile" data-jump-filter="dresses">
@@ -1400,7 +1590,7 @@
         <div class="filter-tools">
           <div class="search-box">
             <svg aria-hidden="true"><use href="#icon-search"></use></svg>
-            <input id="search-input" type="search" placeholder="ابحثي باسم القطعة..." aria-label="البحث في المنتجات" />
+            <input id="search-input" type="search" placeholder="ابحثي بالاسم أو الكود..." aria-label="البحث في المنتجات" />
           </div>
           <span id="products-count" class="products-count" aria-live="polite"></span>
         </div>
@@ -1473,20 +1663,60 @@
           <div id="detail-thumbs" class="detail-thumbs" aria-label="صور إضافية للقطعة"></div>
         </div>
 
-        <!-- بيانات القطعة ومربع الطلب -->
+        <!-- بيانات القطعة والمواصفات الاحترافية ومربع الطلب -->
         <div class="detail-info">
           <div class="detail-badges">
             <span id="detail-cat" class="detail-cat"></span>
             <span id="detail-badge" class="detail-badge hidden"></span>
+            <span class="detail-code-tag">كود الموديل: <strong id="detail-code-top"></strong></span>
           </div>
 
           <h1 id="detail-title" class="detail-title"></h1>
           <p id="detail-price" class="detail-price"></p>
           <p id="detail-desc" class="detail-desc"></p>
 
+          <!-- لوحة المواصفات الاحترافية: الكود + الخامة + الألوان + المقاسات -->
+          <div class="specs-panel" aria-label="مواصفات القطعة">
+            <div class="specs-grid">
+              <div class="spec-card">
+                <span class="spec-card__label">
+                  <svg aria-hidden="true"><use href="#icon-tag"></use></svg>
+                  <span>كود القطعة</span>
+                </span>
+                <span id="detail-spec-code" class="spec-card__value spec-card__value--code"></span>
+              </div>
+
+              <div class="spec-card">
+                <span class="spec-card__label">
+                  <svg aria-hidden="true"><use href="#icon-fabric"></use></svg>
+                  <span>الخامة</span>
+                </span>
+                <span id="detail-spec-material" class="spec-card__value"></span>
+              </div>
+            </div>
+
+            <!-- الألوان المتاحة -->
+            <div id="detail-colors-group" class="option-group">
+              <div class="option-group__header">
+                <span>الألوان المتاحة</span>
+                <span id="detail-selected-color" class="option-group__selected"></span>
+              </div>
+              <div id="detail-colors-list" class="color-swatches" role="group" aria-label="اختاري اللون"></div>
+            </div>
+
+            <!-- المقاسات المتاحة -->
+            <div id="detail-sizes-group" class="option-group">
+              <div class="option-group__header">
+                <span>المقاسات المتاحة</span>
+                <span id="detail-selected-size" class="option-group__selected"></span>
+              </div>
+              <div id="detail-sizes-list" class="size-chips" role="group" aria-label="اختاري المقاس"></div>
+            </div>
+          </div>
+
           <!-- مربع "اطلبي" داخل صفحة القطعة -->
           <div class="order-box">
-            <p class="order-box__note">أعجبتك هذه القطعة؟ اضغطي على الزر بالأسفل لإرسال طلبك مباشرة عبر واتساب:</p>
+            <div id="order-selection-summary" class="order-box__summary"></div>
             <a id="detail-order-btn" href="#" target="_blank" rel="noopener" class="order-box__btn">
               <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               <span>اطلبي الآن عبر واتساب</span>
@@ -1537,7 +1767,7 @@
        إعدادات المتجر والمنتجات — عدّلي هذه البيانات فقط لتحديث الموقع بالكامل
        ========================================================================== */
 
-    // 1. رقم الواتساب بالصيغة الدولية بدون علامة + وبدون صفر في البداية (مثال لمصر: 2010XXXXXXXX)
+    // 1. رقم الواتساب بالصيغة الدولية بدون علامة + وبدون صفر في البداية
     const WHATSAPP_NUMBER = "201204390261";
 
     // 2. اسم العملة التي تظهر بجانب السعر
@@ -1547,101 +1777,174 @@
     const INSTAGRAM_URL = "https://instagram.com/";
 
     // 4. قائمة المنتجات:
-    //    - التصنيفات الخمسة المتاحة (category):
-    //      "dresses"  -> قسم الدريسات
-    //      "pajamas"  -> قسم البيجامات
-    //      "abayas"   -> قسم العبايات
-    //      "hoodies"  -> قسم الهوديز
-    //      "kids"     -> قسم الأطفال
-    //    - كل منتج يحتوي على مصفوفة صور (images: [ ... ]) لوضع أكثر من صورة وزاوية لنفس القطعة.
+    //    - code: كود القطعة (مثال: "YS-101")
+    //    - material: نوع الخامة (مثال: "شيفون مبطن" أو "قطن مصري 100%")
+    //    - colors: قائمة الألوان المتاحة، كل لون له اسم (name) ودرجة لون للدائرة (hex)
+    //    - sizes: قائمة المقاسات المتاحة (مثال: ["S", "M", "L", "XL"] أو ["4 سنوات", "6 سنوات"])
     const PRODUCTS = [
       {
         id: "dress-1",
+        code: "YS-101",
         name: "دريس شيفون مشجر بحزام خصر",
         price: 980,
         category: "dresses",
         badge: "الأكثر طلبًا",
+        material: "شيفون ناعم مبطن بالكامل",
+        colors: [
+          { name: "وردي باستيل", hex: "#F2A6C0" },
+          { name: "بيج دافئ", hex: "#E5D2BE" },
+          { name: "سماوي هادئ", hex: "#B9D4E8" }
+        ],
+        sizes: ["S", "M", "L", "XL"],
         description: "دريس ناعم بخامة شيفون مبطنة بالكامل مع حزام خصر قابل للتعديل وقصة انسيابية تناسب الخروجات النهارية والمسائية.",
         images: ["images/dress-1.jpg", "images/dress-1-2.jpg", "images/dress-1-3.jpg"]
       },
       {
         id: "pajama-1",
+        code: "YS-201",
         name: "بيجامة قطن صيفي مطبوعة — وردي",
         price: 560,
         category: "pajamas",
         badge: "جديد",
+        material: "قطن مصري صافي 100%",
+        colors: [
+          { name: "وردي ناعم", hex: "#F4B4CA" },
+          { name: "أوف وايت", hex: "#FAF5EE" },
+          { name: "لافندر فاتح", hex: "#D6C6E8" }
+        ],
+        sizes: ["M", "L", "XL", "2XL"],
         description: "طقم بيجامة من القطن المصري الناعم 100% مريح جداً في اللبس مع نقشة رقيقة وألوان ثابتة.",
         images: ["images/pajama-1.jpg", "images/pajama-1-2.jpg"]
       },
       {
         id: "abaya-1",
+        code: "YS-301",
         name: "عباية كريب ملكي بقصة كلوش",
         price: 1450,
         category: "abayas",
         badge: "الأكثر طلبًا",
+        material: "كريب ملكي فاخر",
+        colors: [
+          { name: "أسود فاحم", hex: "#231F20" },
+          { name: "كشمير غامق", hex: "#B86B84" },
+          { name: "زيتي هادئ", hex: "#556654" }
+        ],
+        sizes: ["52", "54", "56", "58", "60"],
         description: "عباية أنيقة مصنوعة من الكريب الملكي الناعم بقصة كلوش واسعة تمنحك حرية الحركة وانسيابية راقية في كل المناسبات.",
         images: ["images/abaya-1.jpg", "images/abaya-1-2.jpg", "images/abaya-1-3.jpg"]
       },
       {
         id: "hoodie-1",
+        code: "YS-401",
         name: "هودي قطن أوفر سايز — بينك باستيل",
         price: 680,
         category: "hoodies",
         badge: "جديد",
+        material: "قطن ميلتون مبطن",
+        colors: [
+          { name: "بينك باستيل", hex: "#F5B8CE" },
+          { name: "رمادي فاتح", hex: "#D4D6D8" },
+          { name: "أسود", hex: "#2B2B2B" }
+        ],
+        sizes: ["One Size (يلبس حتى 85 كجم)"],
         description: "هودي بقصة أوفر سايز عصرية مصنوع من قطن ميلتون ناعم ومريح مع جيب أمامي وكابيشو مبطن لإطلالة كاجوال دافئة.",
         images: ["images/hoodie-1.jpg", "images/hoodie-1-2.jpg"]
       },
       {
         id: "kids-1",
+        code: "YS-501",
         name: "فستان أطفال قطن بكشكشة وفيونكة",
         price: 490,
         category: "kids",
         badge: "جديد",
+        material: "قطن طبيعي ناعم على البشرة",
+        colors: [
+          { name: "وردي فاتح", hex: "#F7C3D5" },
+          { name: "أبيض سكري", hex: "#FFFDF8" }
+        ],
+        sizes: ["4 سنوات", "6 سنوات", "8 سنوات", "10 سنوات"],
         description: "فستان بناتي رقيق بخامة قطنية ناعمة على بشرة الأطفال مع تفاصيل كشكشة وفيونكة أنيقة على الخصر.",
         images: ["images/kids-1.jpg", "images/kids-1-2.jpg"]
       },
       {
         id: "dress-2",
+        code: "YS-102",
         name: "دريس لينن سادة بأزرار أمامية",
         price: 1120,
         category: "dresses",
         badge: "جديد",
+        material: "لينن طبيعي بارد",
+        colors: [
+          { name: "بيج رملي", hex: "#DECBB7" },
+          { name: "أبيض", hex: "#FFFFFF" },
+          { name: "وردي ترابي", hex: "#C98A9B" }
+        ],
+        sizes: ["S", "M", "L", "XL"],
         description: "دريس عملي وأنيق من خامة اللينن البارد بأكمام واسعة وأزرار أمامية لإطلالة كاجوال راقية.",
         images: ["images/dress-2.jpg", "images/dress-2-2.jpg"]
       },
       {
         id: "pajama-2",
+        code: "YS-202",
         name: "طقم بيجامة ساتان حريري — أوف وايت",
         price: 690,
         category: "pajamas",
         badge: "",
+        material: "ساتان حريري ناعم",
+        colors: [
+          { name: "أوف وايت", hex: "#FAF5EC" },
+          { name: "شامبين ذهبي", hex: "#E6D0B3" },
+          { name: "وردي خوخي", hex: "#F2B6B0" }
+        ],
+        sizes: ["S", "M", "L", "XL"],
         description: "بيجامة منزلية فاخرة مكونة من قطعتين بخامة ساتان ناعمة ومريحة مع ياقة كلاسيكية.",
         images: ["images/pajama-2.jpg", "images/pajama-2-2.jpg"]
       },
       {
         id: "abaya-2",
+        code: "YS-302",
         name: "عباية لينن مطرزة بأكمام واسعة",
         price: 1650,
         category: "abayas",
         badge: "",
+        material: "لينن مطرز بخيوط ذهبية",
+        colors: [
+          { name: "بيج طبيعي", hex: "#E3D3C1" },
+          { name: "كحلي داكن", hex: "#28354A" }
+        ],
+        sizes: ["52", "54", "56", "58"],
         description: "عباية صيفية وخريفية بخامة اللينن الطبيعي البارد مع تطريز يدوي هادئ على الأكمام والصدر.",
         images: ["images/abaya-2.jpg", "images/abaya-2-2.jpg"]
       },
       {
         id: "hoodie-2",
+        code: "YS-402",
         name: "هودي بسوستة أمامية — أوف وايت",
         price: 740,
         category: "hoodies",
         badge: "الأكثر طلبًا",
+        material: "قطن ثقيل عالي الجودة",
+        colors: [
+          { name: "أوف وايت", hex: "#F8F4EE" },
+          { name: "موف ناعم", hex: "#C49EB8" }
+        ],
+        sizes: ["M", "L", "XL"],
         description: "هودي عملي بسوستة كاملة وخامة قطنية عالية الجودة يناسب التنسيق اليومي والخروجات السريعة.",
         images: ["images/hoodie-2.jpg", "images/hoodie-2-2.jpg"]
       },
       {
         id: "kids-2",
+        code: "YS-502",
         name: "طقم أطفال قطن قطعتين — ألوان باستيل",
         price: 540,
         category: "kids",
         badge: "الأكثر طلبًا",
+        material: "قطن سنجل ليكرا مريح",
+        colors: [
+          { name: "وردي × أبيض", hex: "#F3AFC6" },
+          { name: "أصفر باستيل", hex: "#F6E5A8" }
+        ],
+        sizes: ["3 سنوات", "5 سنوات", "7 سنوات", "9 سنوات"],
         description: "طقم أطفال عملي ومريح مكون من تيشيرت وبنطلون قطن ناعم مناسب للخروجات اليومية والحركة.",
         images: ["images/kids-2.jpg", "images/kids-2-2.jpg"]
       }
@@ -1663,14 +1966,30 @@
       const detailThumbs = document.getElementById("detail-thumbs");
       const detailCat = document.getElementById("detail-cat");
       const detailBadge = document.getElementById("detail-badge");
+      const detailCodeTop = document.getElementById("detail-code-top");
       const detailTitle = document.getElementById("detail-title");
       const detailPrice = document.getElementById("detail-price");
       const detailDesc = document.getElementById("detail-desc");
+
+      // عناصر المواصفات
+      const detailSpecCode = document.getElementById("detail-spec-code");
+      const detailSpecMaterial = document.getElementById("detail-spec-material");
+      const detailColorsGroup = document.getElementById("detail-colors-group");
+      const detailColorsList = document.getElementById("detail-colors-list");
+      const detailSelectedColor = document.getElementById("detail-selected-color");
+      const detailSizesGroup = document.getElementById("detail-sizes-group");
+      const detailSizesList = document.getElementById("detail-sizes-list");
+      const detailSelectedSize = document.getElementById("detail-selected-size");
+      const orderSelectionSummary = document.getElementById("order-selection-summary");
       const detailOrderBtn = document.getElementById("detail-order-btn");
 
       let activeCategory = "all";
       let searchQuery = "";
       let savedScrollY = 0;
+
+      let currentProduct = null;
+      let selectedColorName = "";
+      let selectedSizeName = "";
 
       const CATEGORY_NAMES = {
         dresses: "دريسات",
@@ -1708,6 +2027,30 @@
       document.getElementById("footer-ig-link").href = INSTAGRAM_URL;
       document.getElementById("current-year").textContent = new Date().getFullYear();
 
+      // تحديث ملخص الاختيار ورابط الواتساب تلقائياً عند تغيير اللون أو المقاس
+      function updateOrderDetails() {
+        if (!currentProduct) return;
+        const formattedPrice = formatPrice(currentProduct.price);
+        const codeText = currentProduct.code || currentProduct.id;
+
+        const parts = [`كود: <strong>${codeText}</strong>`];
+        const msgParts = [`أهلاً Yoyo Store، عايزة أطلب: ${currentProduct.name} (كود: ${codeText})`];
+
+        if (selectedColorName) {
+          parts.push(`اللون: <strong>${selectedColorName}</strong>`);
+          msgParts.push(`اللون: ${selectedColorName}`);
+        }
+        if (selectedSizeName) {
+          parts.push(`المقاس: <strong>${selectedSizeName}</strong>`);
+          msgParts.push(`المقاس: ${selectedSizeName}`);
+        }
+
+        msgParts.push(`السعر: ${formattedPrice} ${CURRENCY}`);
+
+        orderSelectionSummary.innerHTML = `اختيارك الحالي: ${parts.join(" • ")}`;
+        detailOrderBtn.href = buildWhatsAppUrl(msgParts.join(" - "));
+      }
+
       function setDetailMainImage(src, altText, fallbackLabel) {
         detailMainFrame.innerHTML = "";
         const img = document.createElement("img");
@@ -1721,14 +2064,20 @@
       }
 
       function openProductPage(product, pushHistory = true) {
+        currentProduct = product;
         savedScrollY = window.scrollY;
         const formattedPrice = formatPrice(product.price);
         const categoryLabel = CATEGORY_NAMES[product.category] || "";
+        const codeText = product.code || product.id;
         const imagesList = Array.isArray(product.images) && product.images.length > 0
           ? product.images
           : ["images/placeholder.jpg"];
 
         detailCat.textContent = categoryLabel;
+        detailCodeTop.textContent = codeText;
+        detailSpecCode.textContent = codeText;
+        detailSpecMaterial.textContent = product.material || "خامة عالية الجودة";
+
         if (product.badge && product.badge.trim() !== "") {
           detailBadge.textContent = product.badge;
           detailBadge.classList.remove("hidden");
@@ -1740,9 +2089,74 @@
         detailPrice.textContent = `${formattedPrice} ${CURRENCY}`;
         detailDesc.textContent = product.description || "قطعة مميزة من تشكيلة Yoyo Store بخامات فاخرة وتفصيل متقن.";
 
-        const orderMessage = `أهلاً Yoyo Store، عايزة أطلب: ${product.name} (${formattedPrice} ${CURRENCY})`;
-        detailOrderBtn.href = buildWhatsAppUrl(orderMessage);
+        // تهيئة الألوان المتاحة
+        const colorsList = Array.isArray(product.colors) ? product.colors : [];
+        detailColorsList.innerHTML = "";
+        if (colorsList.length > 0) {
+          detailColorsGroup.classList.remove("hidden");
+          selectedColorName = colorsList[0].name;
+          detailSelectedColor.textContent = selectedColorName;
 
+          colorsList.forEach((colorObj, idx) => {
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "color-chip";
+            chip.setAttribute("aria-pressed", idx === 0 ? "true" : "false");
+
+            const dot = document.createElement("span");
+            dot.className = "color-chip__dot";
+            dot.style.backgroundColor = colorObj.hex || "#BA2D65";
+
+            const label = document.createElement("span");
+            label.textContent = colorObj.name;
+
+            chip.append(dot, label);
+            chip.addEventListener("click", () => {
+              detailColorsList.querySelectorAll(".color-chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+              chip.setAttribute("aria-pressed", "true");
+              selectedColorName = colorObj.name;
+              detailSelectedColor.textContent = selectedColorName;
+              updateOrderDetails();
+            });
+
+            detailColorsList.appendChild(chip);
+          });
+        } else {
+          detailColorsGroup.classList.add("hidden");
+          selectedColorName = "";
+        }
+
+        // تهيئة المقاسات المتاحة
+        const sizesList = Array.isArray(product.sizes) ? product.sizes : [];
+        detailSizesList.innerHTML = "";
+        if (sizesList.length > 0) {
+          detailSizesGroup.classList.remove("hidden");
+          selectedSizeName = sizesList[0];
+          detailSelectedSize.textContent = selectedSizeName;
+
+          sizesList.forEach((sizeLabel, idx) => {
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "size-chip";
+            chip.setAttribute("aria-pressed", idx === 0 ? "true" : "false");
+            chip.textContent = sizeLabel;
+
+            chip.addEventListener("click", () => {
+              detailSizesList.querySelectorAll(".size-chip").forEach((s) => s.setAttribute("aria-pressed", "false"));
+              chip.setAttribute("aria-pressed", "true");
+              selectedSizeName = sizeLabel;
+              detailSelectedSize.textContent = selectedSizeName;
+              updateOrderDetails();
+            });
+
+            detailSizesList.appendChild(chip);
+          });
+        } else {
+          detailSizesGroup.classList.add("hidden");
+          selectedSizeName = "";
+        }
+
+        updateOrderDetails();
         setDetailMainImage(imagesList[0], product.name, `${categoryLabel} • صورة 1`);
 
         detailThumbs.innerHTML = "";
@@ -1812,6 +2226,7 @@
       function createProductCard(product) {
         const formattedPrice = formatPrice(product.price);
         const categoryLabel = CATEGORY_NAMES[product.category] || "";
+        const codeText = product.code || "";
         const imagesList = Array.isArray(product.images) && product.images.length > 0
           ? product.images
           : ["images/placeholder.jpg"];
@@ -1856,9 +2271,20 @@
         const body = document.createElement("div");
         body.className = "product-card__body";
 
+        const metaRow = document.createElement("div");
+        metaRow.className = "product-card__meta-row";
+
         const catTag = document.createElement("span");
         catTag.className = "product-card__cat-label";
         catTag.textContent = categoryLabel;
+        metaRow.appendChild(catTag);
+
+        if (codeText) {
+          const codeTag = document.createElement("span");
+          codeTag.className = "product-card__code-pill";
+          codeTag.textContent = codeText;
+          metaRow.appendChild(codeTag);
+        }
 
         const title = document.createElement("h3");
         title.className = "product-card__title";
@@ -1871,7 +2297,7 @@
         const viewBtn = document.createElement("button");
         viewBtn.type = "button";
         viewBtn.className = "product-card__btn";
-        viewBtn.textContent = "عرض التفاصيل والصور";
+        viewBtn.textContent = "عرض التفاصيل والمقاسات";
 
         const handleOpen = () => openProductPage(product, true);
         mediaBox.addEventListener("click", handleOpen);
@@ -1884,7 +2310,7 @@
         title.addEventListener("click", handleOpen);
         viewBtn.addEventListener("click", handleOpen);
 
-        body.append(catTag, title, price, viewBtn);
+        body.append(metaRow, title, price, viewBtn);
         article.append(mediaBox, body);
         return article;
       }
@@ -1893,7 +2319,9 @@
         const normalizedQuery = searchQuery.trim().toLowerCase();
         const filtered = PRODUCTS.filter((item) => {
           const matchesCat = activeCategory === "all" || item.category === activeCategory;
-          const matchesSearch = !normalizedQuery || item.name.toLowerCase().includes(normalizedQuery);
+          const matchesSearch = !normalizedQuery
+            || item.name.toLowerCase().includes(normalizedQuery)
+            || (item.code && item.code.toLowerCase().includes(normalizedQuery));
           return matchesCat && matchesSearch;
         });
 
