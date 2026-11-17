@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoyo Store | أزياء بنات وأطفال</title>
+  <meta name="description" content="تشكيلة مختارة من الدريسات، البيجامات، العبايات، الهوديز، وملابس الأطفال من Yoyo Store. اطلبي قطعتك بسهولة عبر واتساب." />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Yoyo Store | أزياء بنات وأطفال تكمّل إطلالتك" />
+  <meta property="og:description" content="تشكيلة راقية من الدريسات والبيجامات والعبايات والهوديز وملابس الأطفال بخامات مميزة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- أيقونة التبويب (Favicon) بفستان رقيق -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FFF7FA'/%3E%3Cpath d='M25 14 L27 25 L16 48 Q32 53 48 48 L37 25 L39 14' fill='%23FCEEF3' stroke='%23BA2D65' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M27 25 Q32 27.5 37 25' fill='none' stroke='%23C9A25B' stroke-width='2.2'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: IBM Plex Sans Arabic + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. متغيرات الألوان والخطوط (واجهة وردية فاخرة)
+       ========================================================================== */
+    :root {
+      --color-primary: #BA2D65;        /* وردي توتي مشرق */
+      --color-primary-hover: #9C2253;  /* درجة وردي أعمق عند التمرير */
+      --color-rose-soft: #F3B6C8;      /* وردي باستيل ناعم */
+      --color-rose-tint: #FCEEF3;      /* خلفية وردية فاتحة */
+      --color-bg: #FFF9FB;             /* خلفية الصفحة الرئيسية */
+      --color-surface: #FFFFFF;        /* خلفية البطاقات */
+      --color-accent: #C9A25B;         /* ذهبي أنيق */
+      --color-accent-dark: #A67F38;    /* ذهبي داكن واضح للقراءة */
+
+      /* ألوان النصوص والحدود */
+      --color-text: #4A2536;           /* عنابي مخملي داكن */
+      --color-text-muted: #7D5A69;     /* نص ثانوي وردي دافئ */
+      --color-border: #F2DCE4;         /* حدود وردية رقيقة */
+      --color-whatsapp: #229A52;       /* أخضر واتساب */
+      --color-whatsapp-hover: #1B7E42;
+
+      /* الخطوط */
+      --font-arabic: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-brand: 'Cormorant Garamond', Georgia, serif;
+
+      /* المقاسات والهوامش */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+      --topbar-height: 36px;
+      --header-height: 76px;
+      --container-max: 1280px;
+
+      /* الظلال */
+      --shadow-card: 0 4px 18px rgba(186, 45, 101, 0.05);
+      --shadow-card-hover: 0 12px 28px rgba(186, 45, 101, 0.12);
+      --shadow-float: 0 8px 24px rgba(34, 154, 82, 0.28);
+    }
+
+    /* ==========================================================================
+       2. الإعدادات العامة (Reset & Base)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-arabic);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 2rem;
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ==========================================================================
+       3. الشريط العلوي الإعلاني الوردي (Announcement Bar)
+       ========================================================================== */
+    .announcement-bar {
+      background: linear-gradient(90deg, #A82458 0%, #BA2D65 50%, #A82458 100%);
+      color: #FFFFFF;
+      min-height: var(--topbar-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding-inline: 1rem;
+    }
+
+    .announcement-bar span {
+      color: #FFE4EC;
+      margin-inline: 0.45rem;
+    }
+
+    /* ==========================================================================
+       4. الرأس الثابت والشعار بفستان البنات والأطفال (Sticky Header & Dress Logo)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-block-end: 1px solid var(--color-border);
+    }
+
+    .site-header__inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      direction: ltr;
+      flex-shrink: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .brand-logo:hover {
+      opacity: 0.88;
+    }
+
+    .brand-logo__svg {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 0.95;
+    }
+
+    .brand-logo__name {
+      font-family: var(--font-brand);
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-logo__sub {
+      font-family: var(--font-arabic);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.36em;
+      color: var(--color-accent-dark);
+      text-transform: uppercase;
+      margin-top: 3px;
+      padding-left: 2px;
+    }
+
+    .header-nav {
+      display: none;
+      align-items: center;
+      gap: 1.35rem;
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    @media (min-width: 960px) {
+      .header-nav {
+        display: flex;
+      }
+    }
+
+    .header-nav a {
+      padding-block: 0.25rem;
+      transition: color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+      .header-nav a:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    .header-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .header-wa-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (hover: hover) {
+      .header-wa-btn:hover {
+        background-color: var(--color-primary-hover);
+      }
+    }
+
+    /* ==========================================================================
+       5. الواجهة الرئيسية الوردية + اللوجو بفستان البنات والأطفال (Hero Section)
+       ========================================================================== */
+    .hero {
+      background: linear-gradient(135deg, #FCEAF1 0%, #FDF4F7 55%, #FFF9FB 100%);
+      border-block-end: 1px solid var(--color-border);
+      padding-block: 2.25rem 2.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-block: 3.5rem 4rem;
+      }
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero__grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3rem;
+      }
+    }
+
+    .hero__content {
+      text-align: start;
+      animation: fadeInUp 0.65s ease-out both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero__tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background-color: #FFFFFF;
+      border: 1px solid var(--color-border);
+      padding: 0.28rem 0.95rem;
+      border-radius: var(--radius-pill);
+      margin-block-end: 0.9rem;
+    }
+
+    .hero__title {
+      font-size: clamp(1.95rem, 4.5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.24;
+      margin-block-end: 0.9rem;
+    }
+
+    .hero__title span {
+      color: var(--color-primary);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+      color: var(--color-text-muted);
+      max-width: 520px;
+      margin-block-end: 1.75rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      padding: 0.85rem 1.95rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(186, 45, 101, 0.22);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    @media (hover: hover) {
+      .btn-primary:hover {
+        background-color: var(--color-primary-hover);
+        transform: translateY(-1px);
+      }
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid var(--color-primary);
+      background-color: #FFFFFF;
+      color: var(--color-primary);
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+      .btn-outline:hover {
+        background-color: var(--color-rose-tint);
+      }
+    }
+
+    /* بطاقة عرض اللوجو بفستان البنات والأطفال */
+    .hero__visual {
+      background: linear-gradient(145deg, #FFFFFF 0%, #FFF5F9 100%);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 255px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-emblem {
+      width: 100%;
+      max-width: 345px;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       6. بطاقات الأقسام الخمسة السريعة (5 Category Tiles)
+       ========================================================================== */
+    .category-tiles {
+      padding-block: 2rem 0.5rem;
+    }
+
+    .category-tiles__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 768px) {
+      .category-tiles__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1060px) {
+      .category-tiles__grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    .cat-tile {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      text-align: start;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    @media (min-width: 768px) {
+      .cat-tile {
+        padding: 1.25rem 1.1rem;
+      }
+    }
+
+    @media (hover: hover) {
+      .cat-tile:hover {
+        border-color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-card);
+      }
+    }
+
+    .cat-tile__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .cat-tile__title {
+        font-size: 1.06rem;
+      }
+    }
+
+    .cat-tile__sub {
+      font-size: 0.76rem;
+      color: var(--color-text-muted);
+      display: block;
+      margin-top: 0.15rem;
+      line-height: 1.4;
+    }
+
+    .cat-tile__arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--color-rose-tint);
+      color: var(--color-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    /* ==========================================================================
+       7. شريط التصفية والبحث الثابت (Sticky Filter & Search Bar)
+       ========================================================================== */
+    .filter-bar {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 40;
+      background-color: rgba(255, 249, 251, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-block: 1px solid var(--color-border);
+      margin-block-start: 1.5rem;
+      padding-block: 0.8rem;
+    }
+
+    .filter-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      overflow-x: auto;
+      max-width: 100%;
+      padding-block: 2px;
+      scrollbar-width: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      padding: 0.46rem 1.15rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn[aria-pressed="true"] {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+    }
+
+    @media (hover: hover) {
+      .filter-btn:not([aria-pressed="true"]):hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+    }
+
+    .filter-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.46rem 2.1rem 0.46rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      font-size: 0.85rem;
+    }
+
+    .search-box input::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    .search-box svg {
+      position: absolute;
+      inset-inline-start: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--color-primary);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .products-count {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       8. شبكة المنتجات (Product Grid - 2 موبايل / 3 تابلت / 4 ديسكتوب)
+       ========================================================================== */
+    .catalog-section {
+      padding-block: 2rem 4rem;
+      scroll-margin-top: calc(var(--header-height) + 64px);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.65rem;
+      }
+    }
+
+    .product-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    @media (hover: hover) {
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-card-hover);
+      }
+    }
+
+    .product-card__media {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background-color: var(--color-rose-tint);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .product-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    @media (hover: hover) {
+      .product-card:hover .product-card__img {
+        transform: scale(1.035);
+      }
+    }
+
+    .product-card__badge {
+      position: absolute;
+      top: 0.6rem;
+      inset-inline-start: 0.6rem;
+      z-index: 2;
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(186, 45, 101, 0.2);
+    }
+
+    .product-card__gallery-count {
+      position: absolute;
+      bottom: 0.55rem;
+      inset-inline-end: 0.55rem;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.92);
+      color: var(--color-primary);
+      padding: 0.18rem 0.55rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-card__placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.25rem;
+      text-align: center;
+      background: linear-gradient(155deg, #FFFFFF 0%, #FCEBF1 100%);
+    }
+
+    .product-card__placeholder-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .product-card__placeholder-name {
+      font-family: var(--font-brand);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.1;
+      direction: ltr;
+    }
+
+    .product-card__placeholder-cat {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .product-card__body {
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 0.35rem;
+    }
+
+    @media (min-width: 768px) {
+      .product-card__body {
+        padding: 1.1rem;
+        gap: 0.45rem;
+      }
+    }
+
+    .product-card__cat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-accent-dark);
+    }
+
+    .product-card__title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    @media (hover: hover) {
+      .product-card__title:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .product-card__title {
+        font-size: 1rem;
+      }
+    }
+
+    .product-card__price {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-block: 0.15rem 0.4rem;
+    }
+
+    .product-card__btn {
+      margin-block-start: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      width: 100%;
+      padding: 0.62rem 0.85rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-rose-tint);
+      color: var(--color-primary);
+      border: 1px solid var(--color-border);
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+      .product-card__btn:hover {
+        background-color: var(--color-primary);
+        color: #FFFFFF;
+      }
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--color-text-muted);
+      background-color: var(--color-surface);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-md);
+    }
+
+    /* ==========================================================================
+       9. صفحة تفاصيل المنتج ومعرض الصور (Product Detail View)
+       ========================================================================== */
+    .product-detail-page {
+      padding-block: 1.5rem 4.5rem;
+      min-height: 75vh;
+    }
+
+    .detail-topbar {
+      margin-block-end: 1.5rem;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+      .back-btn:hover {
+        background-color: var(--color-rose-tint);
+      }
+    }
+
+    .detail-layout {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.15rem;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 860px) {
+      .detail-layout {
+        grid-template-columns: 1.05fr 0.95fr;
+        padding: 2.25rem;
+        gap: 2.75rem;
+        align-items: start;
+      }
+    }
+
+    .detail-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .detail-main-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background-color: var(--color-rose-tint);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+
+    .detail-main-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .detail-thumb-btn {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid transparent;
+      background-color: var(--color-rose-tint);
+      opacity: 0.72;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .detail-thumb-btn[aria-current="true"] {
+      border-color: var(--color-primary);
+      opacity: 1;
+    }
+
+    @media (hover: hover) {
+      .detail-thumb-btn:hover {
+        opacity: 1;
+      }
+    }
+
+    .detail-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      background-color: var(--color-rose-tint);
+    }
+
+    .detail-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .detail-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .detail-cat {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-accent-dark);
+      background-color: #FAF3E6;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .detail-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background-color: var(--color-primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .detail-title {
+      font-size: clamp(1.45rem, 3vw, 2.05rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+
+    .detail-price {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .detail-desc {
+      font-size: 0.96rem;
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      padding-block: 0.5rem;
+      border-block: 1px solid var(--color-border);
+    }
+
+    .order-box {
+      background: linear-gradient(145deg, #FCEEF3 0%, #FFF7FA 100%);
+      border: 1px solid var(--color-rose-soft);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-block-start: 0.5rem;
+    }
+
+    .order-box__note {
+      font-size: 0.86rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .order-box__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.95rem 1.5rem;
+      border-radius: var(--radius-md);
+      background-color: var(--color-whatsapp);
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(34, 154, 82, 0.25);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .order-box__btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (hover: hover) {
+      .order-box__btn:hover {
+        background-color: var(--color-whatsapp-hover);
+        transform: translateY(-1px);
+      }
+    }
+
+    .order-box__perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       10. شريط المميزات (Why Order From Us)
+       ========================================================================== */
+    .features-strip {
+      background-color: var(--color-surface);
+      border-block: 1px solid var(--color-border);
+      padding-block: 2.75rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .feature-item__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--color-rose-tint);
+      color: var(--color-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .feature-item__icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .feature-item__title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-block-end: 0.2rem;
+    }
+
+    .feature-item__desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       11. التذييل الوردي الناعم (Footer)
+       ========================================================================== */
+    .site-footer {
+      background: linear-gradient(180deg, #FCEBF1 0%, #F7DCE6 100%);
+      color: var(--color-text);
+      padding-block: 3rem 5.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .site-footer {
+        padding-block: 3.5rem 4.25rem;
+      }
+    }
+
+    .site-footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-logo-card {
+      background-color: #FFFFFF;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background-color: #FFFFFF;
+      color: var(--color-primary);
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (hover: hover) {
+      .footer-link:hover {
+        background-color: var(--color-primary);
+        color: #FFFFFF;
+      }
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       12. زر واتساب العائم (Floating WhatsApp Button)
+       ========================================================================== */
+    .floating-wa {
+      position: fixed;
+      bottom: 1.15rem;
+      inset-inline-start: 1.15rem;
+      z-index: 60;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: var(--color-whatsapp);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-float);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .floating-wa svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    @media (hover: hover) {
+      .floating-wa:hover {
+        background-color: var(--color-whatsapp-hover);
+        transform: scale(1.06);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- تعريف أيقونات SVG وأيقونة الفستان الرقيقة المعبرة عن محل بيع ملابس البنات والأطفال -->
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+      <!-- أيقونة فستان بناتي وأطفال شيك وخفيف داخل دائرة ناعمة -->
+      <symbol id="girls-kids-dress-icon" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="29" fill="#FCEEF3" stroke="#F2DCE4" stroke-width="1.2" />
+        <!-- حمالات الفستان -->
+        <path d="M26 14 V20 M38 14 V20" stroke="#C9A25B" stroke-width="1.9" stroke-linecap="round" />
+        <!-- صدر الفستان وتنورته المنفوشة برقة -->
+        <path d="M23 20 Q32 23 41 20 L38.5 29.5 L48.5 47 Q32 52 15.5 47 L25.5 29.5 Z" fill="#FFFFFF" stroke="#BA2D65" stroke-width="2" stroke-linejoin="round" />
+        <!-- حزام الخصر الذهبي وفيونكة صغيرة -->
+        <path d="M25.5 29.5 Q32 31.5 38.5 29.5" fill="none" stroke="#C9A25B" stroke-width="2.2" stroke-linecap="round" />
+        <circle cx="32" cy="30.2" r="2" fill="#BA2D65" />
+        <!-- كسرات ناعمة في الفستان -->
+        <path d="M29 33 L24 47.5 M35 33 L40 47.5" stroke="#F3B6C8" stroke-width="1.3" stroke-linecap="round" />
+      </symbol>
+
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09s.77-2.19 1.04-2.49c.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.59.83 2.02.9 2.17.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.05 1.14 1.01 2.09 1.33 2.39 1.48.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4z" />
+      </symbol>
+
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25zM12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+      </symbol>
+
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- الشريط الإعلاني العلوي الوردي -->
+  <div class="announcement-bar">
+    توصيل لجميع محافظات مصر <span>•</span> اطلبي قطعتك مباشرة عبر واتساب
+  </div>
+
+  <!-- 1. الرأس الثابت (Sticky Header) مع لوجو الفستان -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#" id="brand-home-link" class="brand-logo" aria-label="Yoyo Store الرئيسية">
+        <svg class="brand-logo__svg" aria-hidden="true"><use href="#girls-kids-dress-icon"></use></svg>
+        <span class="brand-logo__text">
+          <span class="brand-logo__name">Yoyo</span>
+          <span class="brand-logo__sub">STORE</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="الأقسام الرئيسية">
+        <a href="#collection" data-nav-filter="all">الكل</a>
+        <a href="#collection" data-nav-filter="dresses">دريسات</a>
+        <a href="#collection" data-nav-filter="pajamas">بيجامات</a>
+        <a href="#collection" data-nav-filter="abayas">عبايات</a>
+        <a href="#collection" data-nav-filter="hoodies">هوديز</a>
+        <a href="#collection" data-nav-filter="kids">أطفال</a>
+      </nav>
+
+      <a id="header-wa-link" href="#" target="_blank" rel="noopener" class="header-wa-btn">
+        <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+        <span>تواصلي معنا</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       العرض الرئيسي للكتالوج (Catalog View)
+       ======================================================================== -->
+  <main id="catalog-view">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__tag">تشكيلة الموسم الجديد</span>
+          <h1 class="hero__title">أزياء بنات وأطفال <span>تكمّل إطلالتك</span></h1>
+          <p class="hero__subtitle">تشكيلة متكاملة من الدريسات، البيجامات، العبايات، الهوديز، وملابس الأطفال بخامات ناعمة وتصاميم تناسب كل الأذواق.</p>
+          <div class="hero__actions">
+            <a href="#collection" class="btn-primary">تصفّحي التشكيلة</a>
+            <a href="#collection" data-nav-filter="dresses" class="btn-outline">أحدث الدريسات</a>
+          </div>
+        </div>
+
+        <!-- اللوجو بفستان بناتي وأطفال شيك وخفيف (Yoyo STORE فقط) -->
+        <div class="hero__visual">
+          <svg class="hero-emblem" viewBox="0 0 380 255" role="img" aria-label="Yoyo Store">
+            <!-- قوس علوي ناعم -->
+            <path d="M84 115 A106 86 0 0 1 296 115" fill="none" stroke="#F2DCE4" stroke-width="1.4" />
+
+            <!-- أيقونة فستان بناتي رقيق مع شماعة ذهبية في المنتصف العلوي -->
+            <g transform="translate(154, 16)">
+              <!-- شماعة ذهبية رقيقة -->
+              <path d="M36 9 C36 5.5 41 5.5 41 9 C41 11.2 36 12.5 36 15" fill="none" stroke="#C9A25B" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M36 15 L20 22.5 L52 22.5 Z" fill="none" stroke="#C9A25B" stroke-width="1.7" stroke-linejoin="round" />
+              <!-- الفستان البناتي المنفوش برقة -->
+              <path d="M26 22.5 L28.5 34.5 L15 58 Q36 64 57 58 L43.5 34.5 L46 22.5 Z" fill="#FCEEF3" stroke="#BA2D65" stroke-width="1.9" stroke-linejoin="round" />
+              <!-- حزام الخصر الذهبي -->
+              <path d="M28.5 34.5 Q36 37 43.5 34.5" fill="none" stroke="#C9A25B" stroke-width="2.1" stroke-linecap="round" />
+              <!-- كسرات الفستان الرقيقة -->
+              <path d="M32.5 38 L26.5 59 M39.5 38 L45.5 59" fill="none" stroke="#E598B5" stroke-width="1.2" stroke-linecap="round" />
+              <!-- نجوم بريق خفيفة بجانب الفستان -->
+              <path d="M10 34 L11.2 36.8 L14 38 L11.2 39.2 L10 42 L8.8 39.2 L6 38 L8.8 36.8 Z" fill="#C9A25B" />
+              <path d="M62 34 L63.2 36.8 L66 38 L63.2 39.2 L62 42 L60.8 39.2 L58 38 L60.8 36.8 Z" fill="#C9A25B" />
+            </g>
+
+            <!-- كلمة Yoyo بخط سيريف أنثوي رشيق وواضح -->
+            <text x="190" y="148" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="80" font-weight="700" letter-spacing="1.5" fill="#BA2D65">
+              Yoyo
+            </text>
+
+            <!-- خط فاصل رقيق يتوسطه رمز ألماسة ذهبية صغيرة -->
+            <line x1="106" y1="168" x2="179" y2="168" stroke="#E8C9D5" stroke-width="1.2" />
+            <polygon points="190,163.5 194.5,168 190,172.5 185.5,168" fill="#C9A25B" />
+            <line x1="201" y1="168" x2="274" y2="168" stroke="#E8C9D5" stroke-width="1.2" />
+
+            <!-- كلمة STORE واضحة ومريحة باللون الذهبي الدافئ -->
+            <text x="190" y="198" text-anchor="middle" font-family="'IBM Plex Sans Arabic', sans-serif" font-size="20" font-weight="700" letter-spacing="11" fill="#A67F38">
+              STORE
+            </text>
+
+            <!-- قوس سفلي خفيف يوازن التصميم -->
+            <path d="M128 216 Q190 230 252 216" fill="none" stroke="#F2DCE4" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- بطاقات الأقسام الخمسة (دريسات - بيجامات - عبايات - هوديز - أطفال) -->
+    <section class="category-tiles" aria-label="تصفحي حسب القسم">
+      <div class="container category-tiles__grid">
+        <button type="button" class="cat-tile" data-jump-filter="dresses">
+          <span>
+            <span class="cat-tile__title">دريسات</span>
+            <span class="cat-tile__sub">تصاميم عصرية وخامات ناعمة</span>
+          </span>
+          <span class="cat-tile__arrow" aria-hidden="true">←</span>
+        </button>
+
+        <button type="button" class="cat-tile" data-jump-filter="pajamas">
+          <span>
+            <span class="cat-tile__title">بيجامات</span>
+            <span class="cat-tile__sub">أقطان مريحة وأطقم منزلية أنيقة</span>
+          </span>
+          <span class="cat-tile__arrow" aria-hidden="true">←</span>
+        </button>
+
+        <button type="button" class="cat-tile" data-jump-filter="abayas">
+          <span>
+            <span class="cat-tile__title">عبايات</span>
+            <span class="cat-tile__sub">قصّات انسيابية وخامات كريب ولينن</span>
+          </span>
+          <span class="cat-tile__arrow" aria-hidden="true">←</span>
+        </button>
+
+        <button type="button" class="cat-tile" data-jump-filter="hoodies">
+          <span>
+            <span class="cat-tile__title">هوديز</span>
+            <span class="cat-tile__sub">سويت شيرتات وهوديز قطن مريحة</span>
+          </span>
+          <span class="cat-tile__arrow" aria-hidden="true">←</span>
+        </button>
+
+        <button type="button" class="cat-tile" data-jump-filter="kids">
+          <span>
+            <span class="cat-tile__title">أطفال</span>
+            <span class="cat-tile__sub">أطقم وفساتين رقيقة للأطفال</span>
+          </span>
+          <span class="cat-tile__arrow" aria-hidden="true">←</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- شريط التصنيفات الخمسة + الكل والبحث الثابت -->
+    <nav class="filter-bar" aria-label="تصفية المنتجات">
+      <div class="container filter-bar__inner">
+        <div class="filter-tabs" role="group" aria-label="الفئات">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">الكل</button>
+          <button type="button" class="filter-btn" data-filter="dresses" aria-pressed="false">دريسات</button>
+          <button type="button" class="filter-btn" data-filter="pajamas" aria-pressed="false">بيجامات</button>
+          <button type="button" class="filter-btn" data-filter="abayas" aria-pressed="false">عبايات</button>
+          <button type="button" class="filter-btn" data-filter="hoodies" aria-pressed="false">هوديز</button>
+          <button type="button" class="filter-btn" data-filter="kids" aria-pressed="false">أطفال</button>
+        </div>
+
+        <div class="filter-tools">
+          <div class="search-box">
+            <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+            <input id="search-input" type="search" placeholder="ابحثي باسم القطعة..." aria-label="البحث في المنتجات" />
+          </div>
+          <span id="products-count" class="products-count" aria-live="polite"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- شبكة المنتجات -->
+    <section id="collection" class="catalog-section" aria-label="قائمة المنتجات">
+      <div class="container">
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- لماذا تطلبين من Yoyo Store -->
+    <section class="features-strip" aria-label="مميزات المتجر">
+      <div class="container features-grid">
+        <div class="feature-item">
+          <div class="feature-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="feature-item__title">تفصيل وخامات مميزة</h2>
+            <p class="feature-item__desc">أقمشة مختارة بعناية وتقفيل متقن يمنحك راحة وأناقة تدوم.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="feature-item__title">توصيل لكل المحافظات</h2>
+            <p class="feature-item__desc">شحن سريع وآمن حتى باب المنزل مع إمكانية المعاينة.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item__icon" aria-hidden="true">
+            <svg><use href="#icon-whatsapp"></use></svg>
+          </div>
+          <div>
+            <h2 class="feature-item__title">الطلب بسهولة عبر واتساب</h2>
+            <p class="feature-item__desc">اختاري قطعتك وتواصلي معنا مباشرة لتأكيد المقاس واللون.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       صفحة تفاصيل المنتج الخاصة بكل قطعة (Product Detail View)
+       ======================================================================== -->
+  <section id="product-detail-view" class="product-detail-page hidden" aria-label="تفاصيل القطعة">
+    <div class="container">
+      <div class="detail-topbar">
+        <button type="button" id="back-to-catalog-btn" class="back-btn">
+          <span aria-hidden="true">→</span>
+          <span>العودة للتشكيلة</span>
+        </button>
+      </div>
+
+      <div class="detail-layout">
+        <!-- معرض صور القطعة -->
+        <div class="detail-gallery">
+          <div id="detail-main-frame" class="detail-main-frame"></div>
+          <div id="detail-thumbs" class="detail-thumbs" aria-label="صور إضافية للقطعة"></div>
+        </div>
+
+        <!-- بيانات القطعة ومربع الطلب -->
+        <div class="detail-info">
+          <div class="detail-badges">
+            <span id="detail-cat" class="detail-cat"></span>
+            <span id="detail-badge" class="detail-badge hidden"></span>
+          </div>
+
+          <h1 id="detail-title" class="detail-title"></h1>
+          <p id="detail-price" class="detail-price"></p>
+          <p id="detail-desc" class="detail-desc"></p>
+
+          <!-- مربع "اطلبي" داخل صفحة القطعة -->
+          <div class="order-box">
+            <p class="order-box__note">أعجبتك هذه القطعة؟ اضغطي على الزر بالأسفل لإرسال طلبك مباشرة عبر واتساب:</p>
+            <a id="detail-order-btn" href="#" target="_blank" rel="noopener" class="order-box__btn">
+              <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              <span>اطلبي الآن عبر واتساب</span>
+            </a>
+            <div class="order-box__perks">
+              <span>✓ توصيل لجميع المحافظات</span>
+              <span>✓ تأكيد المقاس واللون قبل الشحن</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل (Footer) -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="#" id="footer-home-link" class="footer-logo-card brand-logo" aria-label="العودة لأعلى الصفحة">
+        <svg class="brand-logo__svg" aria-hidden="true"><use href="#girls-kids-dress-icon"></use></svg>
+        <span class="brand-logo__text">
+          <span class="brand-logo__name">Yoyo</span>
+          <span class="brand-logo__sub">STORE</span>
+        </span>
+      </a>
+
+      <div class="footer-links">
+        <a id="footer-wa-link" href="#" target="_blank" rel="noopener" class="footer-link">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          <span>اطلبي عبر واتساب</span>
+        </a>
+        <a id="footer-ig-link" href="#" target="_blank" rel="noopener" class="footer-link">
+          <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+          <span>تابعينا على إنستجرام</span>
+        </a>
+      </div>
+
+      <p class="footer-copy">© <span id="current-year"></span> Yoyo Store. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- زر واتساب العائم -->
+  <a id="floating-wa-link" href="#" target="_blank" rel="noopener" class="floating-wa" aria-label="تواصلي معنا عبر واتساب">
+    <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+  </a>
+
+  <script>
+    /* ==========================================================================
+       إعدادات المتجر والمنتجات — عدّلي هذه البيانات فقط لتحديث الموقع بالكامل
+       ========================================================================== */
+
+    // 1. رقم الواتساب بالصيغة الدولية بدون علامة + وبدون صفر في البداية (مثال لمصر: 2010XXXXXXXX)
+    const WHATSAPP_NUMBER = "201204390261";
+
+    // 2. اسم العملة التي تظهر بجانب السعر
+    const CURRENCY = "جنيه";
+
+    // 3. رابط حساب إنستجرام
+    const INSTAGRAM_URL = "https://instagram.com/";
+
+    // 4. قائمة المنتجات:
+    //    - التصنيفات الخمسة المتاحة (category):
+    //      "dresses"  -> قسم الدريسات
+    //      "pajamas"  -> قسم البيجامات
+    //      "abayas"   -> قسم العبايات
+    //      "hoodies"  -> قسم الهوديز
+    //      "kids"     -> قسم الأطفال
+    //    - كل منتج يحتوي على مصفوفة صور (images: [ ... ]) لوضع أكثر من صورة وزاوية لنفس القطعة.
+    const PRODUCTS = [
+      {
+        id: "dress-1",
+        name: "دريس شيفون مشجر بحزام خصر",
+        price: 980,
+        category: "dresses",
+        badge: "الأكثر طلبًا",
+        description: "دريس ناعم بخامة شيفون مبطنة بالكامل مع حزام خصر قابل للتعديل وقصة انسيابية تناسب الخروجات النهارية والمسائية.",
+        images: ["images/dress-1.jpg", "images/dress-1-2.jpg", "images/dress-1-3.jpg"]
+      },
+      {
+        id: "pajama-1",
+        name: "بيجامة قطن صيفي مطبوعة — وردي",
+        price: 560,
+        category: "pajamas",
+        badge: "جديد",
+        description: "طقم بيجامة من القطن المصري الناعم 100% مريح جداً في اللبس مع نقشة رقيقة وألوان ثابتة.",
+        images: ["images/pajama-1.jpg", "images/pajama-1-2.jpg"]
+      },
+      {
+        id: "abaya-1",
+        name: "عباية كريب ملكي بقصة كلوش",
+        price: 1450,
+        category: "abayas",
+        badge: "الأكثر طلبًا",
+        description: "عباية أنيقة مصنوعة من الكريب الملكي الناعم بقصة كلوش واسعة تمنحك حرية الحركة وانسيابية راقية في كل المناسبات.",
+        images: ["images/abaya-1.jpg", "images/abaya-1-2.jpg", "images/abaya-1-3.jpg"]
+      },
+      {
+        id: "hoodie-1",
+        name: "هودي قطن أوفر سايز — بينك باستيل",
+        price: 680,
+        category: "hoodies",
+        badge: "جديد",
+        description: "هودي بقصة أوفر سايز عصرية مصنوع من قطن ميلتون ناعم ومريح مع جيب أمامي وكابيشو مبطن لإطلالة كاجوال دافئة.",
+        images: ["images/hoodie-1.jpg", "images/hoodie-1-2.jpg"]
+      },
+      {
+        id: "kids-1",
+        name: "فستان أطفال قطن بكشكشة وفيونكة",
+        price: 490,
+        category: "kids",
+        badge: "جديد",
+        description: "فستان بناتي رقيق بخامة قطنية ناعمة على بشرة الأطفال مع تفاصيل كشكشة وفيونكة أنيقة على الخصر.",
+        images: ["images/kids-1.jpg", "images/kids-1-2.jpg"]
+      },
+      {
+        id: "dress-2",
+        name: "دريس لينن سادة بأزرار أمامية",
+        price: 1120,
+        category: "dresses",
+        badge: "جديد",
+        description: "دريس عملي وأنيق من خامة اللينن البارد بأكمام واسعة وأزرار أمامية لإطلالة كاجوال راقية.",
+        images: ["images/dress-2.jpg", "images/dress-2-2.jpg"]
+      },
+      {
+        id: "pajama-2",
+        name: "طقم بيجامة ساتان حريري — أوف وايت",
+        price: 690,
+        category: "pajamas",
+        badge: "",
+        description: "بيجامة منزلية فاخرة مكونة من قطعتين بخامة ساتان ناعمة ومريحة مع ياقة كلاسيكية.",
+        images: ["images/pajama-2.jpg", "images/pajama-2-2.jpg"]
+      },
+      {
+        id: "abaya-2",
+        name: "عباية لينن مطرزة بأكمام واسعة",
+        price: 1650,
+        category: "abayas",
+        badge: "",
+        description: "عباية صيفية وخريفية بخامة اللينن الطبيعي البارد مع تطريز يدوي هادئ على الأكمام والصدر.",
+        images: ["images/abaya-2.jpg", "images/abaya-2-2.jpg"]
+      },
+      {
+        id: "hoodie-2",
+        name: "هودي بسوستة أمامية — أوف وايت",
+        price: 740,
+        category: "hoodies",
+        badge: "الأكثر طلبًا",
+        description: "هودي عملي بسوستة كاملة وخامة قطنية عالية الجودة يناسب التنسيق اليومي والخروجات السريعة.",
+        images: ["images/hoodie-2.jpg", "images/hoodie-2-2.jpg"]
+      },
+      {
+        id: "kids-2",
+        name: "طقم أطفال قطن قطعتين — ألوان باستيل",
+        price: 540,
+        category: "kids",
+        badge: "الأكثر طلبًا",
+        description: "طقم أطفال عملي ومريح مكون من تيشيرت وبنطلون قطن ناعم مناسب للخروجات اليومية والحركة.",
+        images: ["images/kids-2.jpg", "images/kids-2-2.jpg"]
+      }
+    ];
+
+    /* ==========================================================================
+       الكود البرمجي لتشغيل المتجر وصفحة تفاصيل القطعة تلقائياً
+       ========================================================================== */
+    (function () {
+      const catalogView = document.getElementById("catalog-view");
+      const detailView = document.getElementById("product-detail-view");
+      const gridEl = document.getElementById("product-grid");
+      const countEl = document.getElementById("products-count");
+      const searchInput = document.getElementById("search-input");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const collectionEl = document.getElementById("collection");
+
+      const detailMainFrame = document.getElementById("detail-main-frame");
+      const detailThumbs = document.getElementById("detail-thumbs");
+      const detailCat = document.getElementById("detail-cat");
+      const detailBadge = document.getElementById("detail-badge");
+      const detailTitle = document.getElementById("detail-title");
+      const detailPrice = document.getElementById("detail-price");
+      const detailDesc = document.getElementById("detail-desc");
+      const detailOrderBtn = document.getElementById("detail-order-btn");
+
+      let activeCategory = "all";
+      let searchQuery = "";
+      let savedScrollY = 0;
+
+      const CATEGORY_NAMES = {
+        dresses: "دريسات",
+        pajamas: "بيجامات",
+        abayas: "عبايات",
+        hoodies: "هوديز",
+        kids: "أطفال"
+      };
+
+      function formatPrice(amount) {
+        return Number(amount).toLocaleString("en-US");
+      }
+
+      function buildWhatsAppUrl(message) {
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      }
+
+      function createPlaceholderNode(labelText) {
+        const div = document.createElement("div");
+        div.className = "product-card__placeholder";
+        div.innerHTML = `
+          <svg class="product-card__placeholder-icon" aria-hidden="true"><use href="#girls-kids-dress-icon"></use></svg>
+          <span class="product-card__placeholder-name">Yoyo Store</span>
+          <span class="product-card__placeholder-cat">${labelText}</span>
+        `;
+        return div;
+      }
+
+      const generalMessage = "أهلاً Yoyo Store، حابة أستفسر عن التشكيلة المتاحة عندكم.";
+      const generalWaUrl = buildWhatsAppUrl(generalMessage);
+
+      document.getElementById("header-wa-link").href = generalWaUrl;
+      document.getElementById("footer-wa-link").href = generalWaUrl;
+      document.getElementById("floating-wa-link").href = generalWaUrl;
+      document.getElementById("footer-ig-link").href = INSTAGRAM_URL;
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+
+      function setDetailMainImage(src, altText, fallbackLabel) {
+        detailMainFrame.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = altText;
+        img.onerror = function () {
+          img.remove();
+          detailMainFrame.appendChild(createPlaceholderNode(fallbackLabel));
+        };
+        detailMainFrame.appendChild(img);
+      }
+
+      function openProductPage(product, pushHistory = true) {
+        savedScrollY = window.scrollY;
+        const formattedPrice = formatPrice(product.price);
+        const categoryLabel = CATEGORY_NAMES[product.category] || "";
+        const imagesList = Array.isArray(product.images) && product.images.length > 0
+          ? product.images
+          : ["images/placeholder.jpg"];
+
+        detailCat.textContent = categoryLabel;
+        if (product.badge && product.badge.trim() !== "") {
+          detailBadge.textContent = product.badge;
+          detailBadge.classList.remove("hidden");
+        } else {
+          detailBadge.classList.add("hidden");
+        }
+
+        detailTitle.textContent = product.name;
+        detailPrice.textContent = `${formattedPrice} ${CURRENCY}`;
+        detailDesc.textContent = product.description || "قطعة مميزة من تشكيلة Yoyo Store بخامات فاخرة وتفصيل متقن.";
+
+        const orderMessage = `أهلاً Yoyo Store، عايزة أطلب: ${product.name} (${formattedPrice} ${CURRENCY})`;
+        detailOrderBtn.href = buildWhatsAppUrl(orderMessage);
+
+        setDetailMainImage(imagesList[0], product.name, `${categoryLabel} • صورة 1`);
+
+        detailThumbs.innerHTML = "";
+        imagesList.forEach((imgSrc, index) => {
+          const thumbBtn = document.createElement("button");
+          thumbBtn.type = "button";
+          thumbBtn.className = "detail-thumb-btn";
+          thumbBtn.setAttribute("aria-current", index === 0 ? "true" : "false");
+          thumbBtn.setAttribute("aria-label", `عرض صورة ${index + 1}`);
+
+          const thumbImg = document.createElement("img");
+          thumbImg.src = imgSrc;
+          thumbImg.alt = `${product.name} - صورة ${index + 1}`;
+          thumbImg.onerror = function () {
+            thumbImg.remove();
+            const fallback = document.createElement("span");
+            fallback.className = "detail-thumb-fallback";
+            fallback.textContent = `صورة ${index + 1}`;
+            thumbBtn.appendChild(fallback);
+          };
+
+          thumbBtn.appendChild(thumbImg);
+          thumbBtn.addEventListener("click", () => {
+            detailThumbs.querySelectorAll(".detail-thumb-btn").forEach((b) => b.setAttribute("aria-current", "false"));
+            thumbBtn.setAttribute("aria-current", "true");
+            setDetailMainImage(imgSrc, `${product.name} - صورة ${index + 1}`, `${categoryLabel} • صورة ${index + 1}`);
+          });
+
+          detailThumbs.appendChild(thumbBtn);
+        });
+
+        catalogView.classList.add("hidden");
+        detailView.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        if (pushHistory) {
+          history.pushState({ productId: product.id }, "", `#item-${encodeURIComponent(product.id)}`);
+        }
+      }
+
+      function closeProductPage(pushHistory = true) {
+        if (detailView.classList.contains("hidden")) return;
+        detailView.classList.add("hidden");
+        catalogView.classList.remove("hidden");
+        window.scrollTo({ top: savedScrollY, behavior: "auto" });
+
+        if (pushHistory) {
+          history.pushState(null, "", window.location.pathname + window.location.search);
+        }
+      }
+
+      document.getElementById("back-to-catalog-btn").addEventListener("click", () => closeProductPage(true));
+
+      window.addEventListener("popstate", () => {
+        const hash = window.location.hash;
+        if (hash.startsWith("#item-")) {
+          const id = decodeURIComponent(hash.replace("#item-", ""));
+          const found = PRODUCTS.find((p) => p.id === id);
+          if (found) {
+            openProductPage(found, false);
+            return;
+          }
+        }
+        closeProductPage(false);
+      });
+
+      function createProductCard(product) {
+        const formattedPrice = formatPrice(product.price);
+        const categoryLabel = CATEGORY_NAMES[product.category] || "";
+        const imagesList = Array.isArray(product.images) && product.images.length > 0
+          ? product.images
+          : ["images/placeholder.jpg"];
+
+        const article = document.createElement("article");
+        article.className = "product-card";
+
+        const mediaBox = document.createElement("div");
+        mediaBox.className = "product-card__media";
+        mediaBox.setAttribute("role", "button");
+        mediaBox.setAttribute("tabindex", "0");
+        mediaBox.setAttribute("aria-label", `عرض تفاصيل وصور ${product.name}`);
+
+        if (product.badge && product.badge.trim() !== "") {
+          const badge = document.createElement("span");
+          badge.className = "product-card__badge";
+          badge.textContent = product.badge;
+          mediaBox.appendChild(badge);
+        }
+
+        if (imagesList.length > 1) {
+          const galleryBadge = document.createElement("span");
+          galleryBadge.className = "product-card__gallery-count";
+          galleryBadge.textContent = `${imagesList.length} صور`;
+          mediaBox.appendChild(galleryBadge);
+        }
+
+        const img = document.createElement("img");
+        img.className = "product-card__img";
+        img.src = imagesList[0];
+        img.alt = product.name;
+        img.loading = "lazy";
+        img.decoding = "async";
+
+        img.onerror = function () {
+          img.remove();
+          mediaBox.appendChild(createPlaceholderNode(categoryLabel));
+        };
+
+        mediaBox.appendChild(img);
+
+        const body = document.createElement("div");
+        body.className = "product-card__body";
+
+        const catTag = document.createElement("span");
+        catTag.className = "product-card__cat-label";
+        catTag.textContent = categoryLabel;
+
+        const title = document.createElement("h3");
+        title.className = "product-card__title";
+        title.textContent = product.name;
+
+        const price = document.createElement("p");
+        price.className = "product-card__price";
+        price.textContent = `${formattedPrice} ${CURRENCY}`;
+
+        const viewBtn = document.createElement("button");
+        viewBtn.type = "button";
+        viewBtn.className = "product-card__btn";
+        viewBtn.textContent = "عرض التفاصيل والصور";
+
+        const handleOpen = () => openProductPage(product, true);
+        mediaBox.addEventListener("click", handleOpen);
+        mediaBox.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleOpen();
+          }
+        });
+        title.addEventListener("click", handleOpen);
+        viewBtn.addEventListener("click", handleOpen);
+
+        body.append(catTag, title, price, viewBtn);
+        article.append(mediaBox, body);
+        return article;
+      }
+
+      function renderProducts() {
+        const normalizedQuery = searchQuery.trim().toLowerCase();
+        const filtered = PRODUCTS.filter((item) => {
+          const matchesCat = activeCategory === "all" || item.category === activeCategory;
+          const matchesSearch = !normalizedQuery || item.name.toLowerCase().includes(normalizedQuery);
+          return matchesCat && matchesSearch;
+        });
+
+        gridEl.innerHTML = "";
+        if (filtered.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "empty-state";
+          empty.textContent = "لا توجد قطع مطابقة لبحثك حالياً.";
+          gridEl.appendChild(empty);
+        } else {
+          const fragment = document.createDocumentFragment();
+          filtered.forEach((product) => fragment.appendChild(createProductCard(product)));
+          gridEl.appendChild(fragment);
+        }
+
+        countEl.textContent = `${filtered.length} قطعة`;
+      }
+
+      function setCategory(category, shouldScroll = false) {
+        closeProductPage(true);
+        activeCategory = category;
+        filterBtns.forEach((btn) => {
+          btn.setAttribute("aria-pressed", String(btn.dataset.filter === category));
+        });
+        renderProducts();
+        if (shouldScroll && collectionEl) {
+          collectionEl.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => setCategory(btn.dataset.filter, false));
+      });
+
+      document.querySelectorAll("[data-jump-filter]").forEach((tile) => {
+        tile.addEventListener("click", () => setCategory(tile.dataset.jumpFilter, true));
+      });
+
+      document.querySelectorAll("[data-nav-filter]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          setCategory(link.dataset.navFilter, true);
+        });
+      });
+
+      document.getElementById("brand-home-link").addEventListener("click", (e) => {
+        e.preventDefault();
+        closeProductPage(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      document.getElementById("footer-home-link").addEventListener("click", (e) => {
+        e.preventDefault();
+        closeProductPage(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      searchInput.addEventListener("input", (e) => {
+        searchQuery = e.target.value;
+        renderProducts();
+      });
+
+      renderProducts();
+      if (window.location.hash.startsWith("#item-")) {
+        const id = decodeURIComponent(window.location.hash.replace("#item-", ""));
+        const found = PRODUCTS.find((p) => p.id === id);
+        if (found) openProductPage(found, false);
+      }
+    })();
+  </script>
+</body>
+</html>
